@@ -7,18 +7,8 @@
     <title>Vite App Calculator</title>
   </head>
   <body>
-    <div id="app">
-      <input type="number" v-model.number="num1" @input="calculate">
-      <select v-model="operator" @change="calculate">
-          <option value="adição">+</option>
-          <option value="subtração">-</option>
-          <option value="multiplicação">*</option>
-          <option value="divisão">/</option>
-      </select>
-      <input type="number" v-model.number="num2" @input="calculate">
-      <p>Resultado: {{ resultado }}</p>
-  </div>
-  </body>
+    <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  </body>
 </html>
