@@ -4,32 +4,32 @@ import { reactive } from "vue";
     const Vue = reactive({
     el: '#app',
     data: {
-        num1: 0,
-        num2: 0,
-        operator: 'add',
-        result: 0
+        numero1: 0,
+        numero2: 0,
+        operador: 'add',
+        resultado: 0
     },
     methods: {
         calculate: function () {
-            switch (this.operator) {
+            switch (this.operador) {
                 case 'add':
-                    this.result = parseFloat(this.num1) + parseFloat(this.num2);
+                    this.resultado = parseFloat(this.numero1) + parseFloat(this.numero2);
                     break;
                 case 'subtract':
-                    this.result = parseFloat(this.num1) - parseFloat(this.num2);
+                    this.resultado = parseFloat(this.numero1) - parseFloat(this.numero2);
                     break;
                 case 'multiply':
-                    this.result = parseFloat(this.num1) * parseFloat(this.num2);
+                    this.resultado = parseFloat(this.numero1) * parseFloat(this.numero2);
                     break;
                 case 'divide':
-                    if (parseFloat(this.num2) !== 0) {
-                        this.result = parseFloat(this.num1) / parseFloat(this.num2);
+                    if (parseFloat(this.numero2) !== 0) {
+                        this.resultado = parseFloat(this.numero1) / parseFloat(this.numero2);
                     } else {
-                        this.result = 'Não é possível dividir por zero';
+                        this.resultado = 'Não é possível dividir por zero';
                     }
                     break;
                 default:
-                    this.result = 0;
+                    this.resultado = 0;
             }
         }
     }
@@ -38,15 +38,15 @@ import { reactive } from "vue";
 
 <template>
   <div id="app">
-        <input type="number" v-model.number="num1" @input="calculate">
-        <select v-model="operator" @change="calculate">
+        <input type="number" v-model.number="numero1" @input="calculate">
+        <select v-model="operador" @change="calculate">
             <option value="add">+</option>
             <option value="subtract">-</option>
             <option value="multiply">*</option>
             <option value="divide">/</option>
         </select>
-        <input type="number" v-model.number="num2" @input="calculate">
-        <p>Resultado: {{ result }}</p>
+        <input type="number" v-model.number="numero2" @input="calculate">
+        <p>resultado: {{ resultado }}</p>
     </div>
 </template>
 
